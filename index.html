@@ -525,6 +525,13 @@
 
   /* Bot SVG inline color via currentColor */
   .bot-svg path { fill: currentColor; }
+
+  /* Invert text selection on dark surfaces so the highlight stays visible */
+  .hero ::selection,
+  .premise-half.right ::selection,
+  .stage.featured ::selection,
+  .refs-section ::selection,
+  .foot ::selection { background: var(--paper); color: var(--ink); }
 </style>
 </head>
 <body>
