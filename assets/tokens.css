@@ -1,0 +1,226 @@
+/* ============================================================
+   TANGO — Design Tokens
+   colors_and_type.css
+   Pure monochrome foundation + a single warm accent (Tango Red),
+   chunky/friendly type, generous spacing.
+   ============================================================ */
+
+/* ---- Webfonts (Google Fonts) -----------------------------------
+   Display & UI live in two complementary families:
+   - Bricolage Grotesque: chunky, variable-width, characterful — matches the logo.
+   - Geist: clean neutral grotesque for body/UI/long-form.
+   - Geist Mono: code, tabular data, system status.
+   ---------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- COLOR — Core ink & paper ---------- */
+  --ink:        #0A0A0A;   /* primary text, primary surfaces dark */
+  --ink-2:      #1A1A1A;   /* near-black surface */
+  --ink-3:      #2E2E2E;   /* secondary dark surface / borders on dark */
+  --ink-4:      #4A4A4A;   /* muted dark text on light */
+  --ink-5:      #767676;   /* tertiary text */
+  --ink-6:      #A8A8A8;   /* disabled text */
+
+  --paper:      #FFFFFF;   /* purest light surface */
+  --bone:       #F5F2EC;   /* default page background — warm off-white */
+  --bone-2:     #EBE6DC;   /* subtle card on bone */
+  --bone-3:     #D6CFC2;   /* hairline on bone, dividers */
+
+  /* ---------- COLOR — Tango Accent (the only chromatic value) ---------- */
+  --tango:      #E63329;   /* signature red — used sparingly for energy */
+  --tango-deep: #B81F19;   /* hover/pressed */
+  --tango-soft: #FFE9E6;   /* tinted background */
+  --tango-ink:  #5A0F0C;   /* text on tango-soft */
+
+  /* ---------- COLOR — Semantic ---------- */
+  --success:    #1F8A5B;
+  --success-soft:#E4F4EC;
+  --warn:       #C77400;
+  --warn-soft:  #FBEFD8;
+  --danger:     #C8281D;
+  --danger-soft:#FCE4E2;
+  --info:       #2A6FDB;
+  --info-soft:  #E4EEFB;
+
+  /* ---------- COLOR — Aliases (semantic surfaces) ---------- */
+  --bg:         var(--bone);
+  --bg-elevated:var(--paper);
+  --bg-inverse: var(--ink);
+
+  --fg:         var(--ink);
+  --fg-muted:   var(--ink-4);
+  --fg-subtle:  var(--ink-5);
+  --fg-disabled:var(--ink-6);
+  --fg-inverse: var(--paper);
+
+  --border:     rgba(10,10,10,0.10);
+  --border-strong:rgba(10,10,10,0.22);
+  --border-inverse:rgba(255,255,255,0.16);
+
+  --accent:     var(--tango);
+  --accent-fg:  var(--paper);
+  --focus-ring: var(--tango);
+
+  /* ---------- TYPE — Families ---------- */
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans:    'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono:    'Geist Mono', ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  /* ---------- TYPE — Scale (px) ---------- */
+  --fs-display-xl: clamp(56px, 8vw, 112px);
+  --fs-display-l:  clamp(44px, 6vw,  84px);
+  --fs-h1:         48px;
+  --fs-h2:         36px;
+  --fs-h3:         28px;
+  --fs-h4:         22px;
+  --fs-h5:         18px;
+  --fs-body-l:     18px;
+  --fs-body:       16px;
+  --fs-body-s:     14px;
+  --fs-caption:    12px;
+  --fs-micro:      11px;   /* labels, tags */
+
+  /* ---------- TYPE — Weight ---------- */
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    800;
+
+  /* ---------- TYPE — Leading / Tracking ---------- */
+  --lh-tight:    1.05;
+  --lh-snug:     1.18;
+  --lh-normal:   1.45;
+  --lh-relaxed:  1.6;
+
+  --tracking-tight: -0.02em;
+  --tracking-snug:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.06em;   /* eyebrows, labels */
+  --tracking-caps:   0.12em;   /* all-caps small text */
+
+  /* ---------- SPACING (4px base) ---------- */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10:128px;
+
+  /* ---------- RADII ---------- */
+  --r-1:   4px;
+  --r-2:   8px;
+  --r-3:  12px;     /* default UI radius */
+  --r-4:  16px;
+  --r-5:  24px;
+  --r-6:  32px;
+  --r-full: 9999px;
+
+  /* ---------- BORDERS ---------- */
+  --bw-hair:   1px;
+  --bw-edge:   1.5px;
+  --bw-strong: 2px;
+  --bw-stamp:  3px;   /* poster/feature borders */
+
+  /* ---------- SHADOWS (monochrome only — no color tints) ---------- */
+  --shadow-1: 0 1px 0 rgba(10,10,10,0.04), 0 1px 2px rgba(10,10,10,0.06);
+  --shadow-2: 0 2px 4px rgba(10,10,10,0.06), 0 4px 12px rgba(10,10,10,0.08);
+  --shadow-3: 0 6px 16px rgba(10,10,10,0.10), 0 12px 32px rgba(10,10,10,0.10);
+  --shadow-4: 0 14px 28px rgba(10,10,10,0.12), 0 28px 64px rgba(10,10,10,0.14);
+  /* Stamp = hard offset shadow used on feature cards / posters */
+  --shadow-stamp: 6px 6px 0 0 var(--ink);
+  --shadow-stamp-sm: 3px 3px 0 0 var(--ink);
+  --shadow-stamp-tango: 6px 6px 0 0 var(--tango);
+
+  /* ---------- MOTION ---------- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);   /* default */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* playful overshoot */
+  --dur-fast:    140ms;
+  --dur-base:    220ms;
+  --dur-slow:    420ms;
+
+  /* ---------- LAYOUT ---------- */
+  --container:   1200px;
+  --container-narrow: 760px;
+  --gutter:      var(--space-5);
+}
+
+/* =============================================================
+   SEMANTIC ELEMENT BASE
+   Use these as a starting point — drop colors_and_type.css into
+   any artifact and headings/body will already look on-brand.
+   ============================================================= */
+
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--ink); color: var(--paper); }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  color: var(--fg);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-h1); font-weight: var(--fw-black); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); letter-spacing: var(--tracking-snug); }
+h5 { font-size: var(--fs-h5); letter-spacing: var(--tracking-snug); }
+
+.display-xl { font-family: var(--font-display); font-size: var(--fs-display-xl); font-weight: var(--fw-black); line-height: var(--lh-tight); letter-spacing: -0.035em; }
+.display-l  { font-family: var(--font-display); font-size: var(--fs-display-l);  font-weight: var(--fw-bold);  line-height: var(--lh-tight); letter-spacing: -0.03em; }
+
+p { margin: 0; line-height: var(--lh-relaxed); text-wrap: pretty; }
+.lead { font-size: var(--fs-body-l); color: var(--fg-muted); }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+code, kbd, pre, samp {
+  font-family: var(--font-mono);
+  font-size: 0.94em;
+}
+code {
+  background: var(--bone-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-1);
+  padding: 1px 6px;
+}
+
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:hover { color: var(--tango-deep); text-decoration-color: var(--tango); }
+
+hr { border: 0; border-top: 1px solid var(--border); margin: var(--space-6) 0; }
+
+/* Focus ring — consistent across all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
