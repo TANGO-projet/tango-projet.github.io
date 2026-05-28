@@ -273,6 +273,7 @@
   .stage .step {
     font-family: var(--font-mono); font-size: 11px; color: var(--ink-5);
     letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--tango);
   }
   .stage h4 {
     font-family: var(--font-display); font-weight: 700; font-size: 22px;
@@ -293,7 +294,9 @@
     .arrow { transform: rotate(90deg); padding: var(--space-2) 0; }
   }
   .stage.featured {
-    background: var(--ink); color: var(--paper);
+    background: var(--ink);
+    color: var(--paper);
+    box-shadow: 3px 3px 0 0 var(--tango)
   }
   .stage.featured h4 { color: var(--paper); }
   .stage.featured p { color: var(--bone-3); }
@@ -312,6 +315,8 @@
   }
   .pillar:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 0 var(--ink); }
   .pillar:nth-child(2):hover { box-shadow: 9px 9px 0 0 var(--tango); }
+  .cases .stage:nth-child(2):hover,
+  .pipeline .featured:hover { box-shadow: 5px 5px 0 0 var(--tango); }
   .pillar .num {
     font-family: var(--font-mono); font-size: 12px; color: var(--ink-5);
     letter-spacing: 0.08em; text-transform: uppercase;
@@ -339,10 +344,6 @@
     transition: border-color var(--dur-base) var(--ease-out);
   }
   .case:hover { border-color: var(--ink); }
-  .case .tag {
-    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--tango); font-weight: 600;
-  }
   .case h4 {
     font-family: var(--font-display); font-weight: 700; font-size: 20px;
     letter-spacing: -0.015em; line-height: 1.15;
@@ -442,7 +443,7 @@
     font-family: var(--font-display); font-weight: 700; font-size: 22px;
     letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 4px;
   }
-  .person .role { font-family: var(--font-mono); font-size: 12px; color: var(--ink-5); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
+  .person .role { font-family: var(--font-mono); font-size: 12px; color: var(--tango); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
   .person p { color: var(--ink-4); font-size: 14px; line-height: 1.55; }
 
   /* Affiliations strip */
@@ -577,8 +578,8 @@
       <div>
         <span class="badge">Acronym</span>
         <div class="expand">
-          <b>T</b>angible <b>i</b>N<b>ter</b>face through<br>
-          <b>GA</b>MA <b>O</b>rchestration
+          <b>TA</b>ngible i<b>N</b>terface through<br>
+          <b>G</b>AMA <b>O</b>rchestration
         </div>
       </div>
     </div>
@@ -620,7 +621,7 @@
         <div class="label">State of the art · Hoan Kiem Air, CityScope…</div>
         <h3>Today, the support is physical — but the agents are still pixels projected on top.</h3>
         <p>
-          Most tangible ABMs use projected simulation on a 3D mock-up. The maquette is real; the simulated agents are not. Users see the model react to placed objects, but the agents inside it remain immaterial overlays.
+          Most tangible <abbr title="Agent-Based Model">ABM</abbr>s use projected simulation on a 3D mock-up. The maquette is real; the simulated agents are not. Users see the model react to placed objects, but the agents inside it remain immaterial overlays.
         </p>
         <div class="scene" aria-hidden="true">
           <div class="ghost" style="left: 14%; top: 28%;"></div>
@@ -756,27 +757,27 @@
     </div>
 
     <div class="cases">
-      <article class="case">
-        <div class="glyph" aria-hidden="true">
+      <article class="stage">
+        <div class="stage-icon">
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V8l4-3 4 3v13"></path><path d="M13 21V11l4-2 4 2v10"></path><path d="M9 21v-5"></path><circle cx="17" cy="15" r="0.8" fill="currentColor"></circle></svg>
         </div>
-        <div class="tag">Scenario · 01</div>
+        <div class="step">Scenario · 01</div>
         <h4>Urban evacuation</h4>
         <p>Test crowd routing and signage placement against the real spatial constraints of a neighbourhood model — bottlenecks become visible as bodies, not heatmaps.</p>
       </article>
-      <article class="case">
-        <div class="glyph" aria-hidden="true">
+      <article class="stage">
+        <div class="stage-icon">
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="11" height="6" rx="1"></rect><path d="M14 11h4l3 3v3h-7"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle><path d="M3 8h8"></path></svg>
         </div>
-        <div class="tag">Scenario · 02</div>
+        <div class="step">Scenario · 02</div>
         <h4>Autonomous fleet logistics</h4>
         <p>Optimise delivery flows and priority rules with a live fleet of robots circulating on a district mock-up. See congestion appear; iterate on coordination algorithms in the room.</p>
       </article>
-      <article class="case">
-        <div class="glyph" aria-hidden="true">
+      <article class="stage">
+        <div class="stage-icon">
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8v8l9 5 9-5V8z"></path><path d="M3 8l9 5 9-5"></path><path d="M12 13v8"></path><circle cx="9" cy="11" r="0.9" fill="currentColor"></circle><circle cx="15" cy="11" r="0.9" fill="currentColor"></circle></svg>
         </div>
-        <div class="tag">Scenario · 03</div>
+        <div class="step">Scenario · 03</div>
         <h4>Disaster-zone coordination</h4>
         <p>Rehearse coordinated interventions of service robots through damaged terrain. Confront theoretical planners with friction the screen never shows.</p>
       </article>
@@ -793,7 +794,7 @@
         <h2>Ten months,<br>one demonstrator.</h2>
       </div>
       <p class="lede">
-        TANGO is a focused, ten-month exploratory project. The aim is not a finished platform but a credible, documented proof — enough to convince a community that tangible ABMs can be embodied, not just projected.
+        TANGO is a focused, ten-month exploratory project. The aim is not a finished platform but a credible, documented proof — enough to convince a community that tangible <abbr title="Agent-Based Model">ABM</abbr>s can be embodied, not just projected.
       </p>
     </div>
 
@@ -885,7 +886,7 @@
         <h2>Two researchers.<br>One duet.</h2>
       </div>
       <p class="lede">
-        TANGO is run by two researchers based across IRD ACROSS in South-East Asia, with prior work on tangible ABMs (Hoan Kiem Air, CityScope Hanoi) and on the GAMA platform itself.
+        TANGO is run by two researchers based at the <a href="https://across-lab.org" target="_blank" style="color: inherit;">ACROSS Lab</a> in South-East Asia, with prior work on tangible <abbr title="Agent-Based Model">ABM</abbr>s (Hoan Kiem Air, CityScope Hanoi) and on the GAMA platform itself.
       </p>
     </div>
 
@@ -895,7 +896,7 @@
         <div>
           <h4>Arthur Brugière</h4>
           <div class="role">UMMISCO · IRD ACROSS</div>
-          <!-- <p>Co-author of past tangible ABM experiments on urban pollution (Hoan Kiem). Leads hardware design and the GAMA integration on TANGO.</p> -->
+          <a href="https://arthurbrugiere.fr/" target="_blank">Website →</a>
         </div>
       </article>
       <article class="person">
@@ -903,7 +904,7 @@
         <div>
           <h4>Baptiste Lesquoy</h4>
           <div class="role">IRIT · IRD ACROSS</div>
-          <!-- <p>Background in distributed systems and agent communication. Leads the synchronisation layer and the open-source connector stack.</p> -->
+          <a href="https://blog.baptistel.xyz/" target="_blank">Website →</a>
         </div>
       </article>
     </div>
@@ -926,7 +927,7 @@
         <span class="eyebrow">08 — Foundations</span>
         <h2>Standing on the shoulders<br>of tangible work.</h2>
       </div>
-      <p class="lede">TANGO is a deliberate next step from a lineage of tangible ABM and swarm-robotics research. A selection of the work the project builds on.</p>
+      <p class="lede">TANGO is a deliberate next step from a lineage of tangible <abbr title="Agent-Based Model">ABM</abbr> and swarm-robotics research. A selection of the work the project builds on.</p>
     </div>
 
     <div class="refs">
@@ -962,17 +963,17 @@
       </div>
     </div>
 
-    <div class="cta">
+    <!-- <div class="cta">
       <div>
         <div class="eyebrow" style="color: var(--ink-6);">Open call</div>
         <h3>Got a GAMA model<br>you'd like to feel?</h3>
         <p>If your work involves agent-based modelling, urban systems, swarm robotics, or open-hardware design and you're curious about embodying a simulation — we'd love to hear from you. Collaborators, testers, and labs welcome.</p>
       </div>
       <div class="row" style="gap: var(--space-3);">
-        <a class="btn btn-primary" href="mailto:arthur.brugiere@ird.fr">Reach out <span>→</span></a>
+        <a class="btn btn-primary" href="mailto:XXXX">Reach out <span>→</span></a>
         <a class="btn btn-ghost-dark" href="https://gama-platform.org" target="_blank" rel="noopener">GAMA Platform</a>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
 
